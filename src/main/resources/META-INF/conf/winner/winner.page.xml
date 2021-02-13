@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<simple-page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
+             width='50%'>
+    <form query-id="winners">
+        <fields>
+            <row>
+                <select id="month" label="Month" required="true"
+                        query-id="months" label-field-id="name"/>
+                <select id="year" label="Year" required="true"
+                        query-id="years" label-field-id="name"/>
+            </row>
+            <row>
+                <input-select id="achievement" query-id="achievement" label="Achievement" required="true"
+                              search="false" label-field-id="name" image-field-id="image"/>
+                <input-select id="member" query-id="member" label="Winner" required="true"
+                              search="false" label-field-id="name" image-field-id="avatar"/>
+            </row>
+            <input-text id="points" label="Points" domain="integer"/>
+            <text-area id="note" label="Note"/>
+        </fields>
+    </form>
+</simple-page>

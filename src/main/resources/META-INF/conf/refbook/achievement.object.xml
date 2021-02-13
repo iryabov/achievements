@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object xmlns="http://n2oapp.net/framework/config/schema/object-4.0">
+    <operations>
+        <operation id="create">
+            <invocation>
+                <sql>insert into achievements.achievement (id, name, image, type)
+                    values (:id, :name, :image, :type)</sql>
+            </invocation>
+            <in>
+                <field id="id" mapping="['id']"/>
+                <field id="name" mapping="['name']"/>
+                <field id="image" mapping="['image']"/>
+                <field id="type.id" mapping="['type']"/>
+            </in>
+            <out>
+                <field id="id" mapping="[0]"/>
+            </out>
+        </operation>
+        <operation id="update">
+            <invocation>
+                <sql>update achievements.achievement set name = :name, image = :image, type = :type
+                    where id = :id</sql>
+            </invocation>
+            <in>
+                <field id="id" mapping="['id']"/>
+                <field id="name" mapping="['name']"/>
+                <field id="image" mapping="['image']"/>
+                <field id="type.id" mapping="['type']"/>
+            </in>
+        </operation>
+        <operation id="delete">
+            <invocation>
+                <sql>delete from achievements.achievement where id = :id</sql>
+            </invocation>
+            <in>
+                <field id="id" mapping="['id']"/>
+            </in>
+        </operation>
+    </operations>
+</object>

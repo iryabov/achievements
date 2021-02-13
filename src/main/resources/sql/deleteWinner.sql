@@ -1,0 +1,1 @@
+delete from achievements.winner where id = :id

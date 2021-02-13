@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<header xmlns="http://n2oapp.net/framework/config/schema/header-2.0"
+        color="inverse" brand-name="Achievements">
+    <nav>
+        <a label="Store" href="#" icon="fa fa-shopping-cart"/>
+        <a label="Statistic" href="#" icon="fa fa-pie-chart"/>
+        <sub-menu label="Data" icon="fa fa-database">
+            <page page-id="winners" label="Winners" icon="fa fa-trophy"/>
+
+        </sub-menu>
+        <sub-menu label="Refbooks" icon="fa fa-book">
+            <page page-id="achievements" label="Achievements" icon="fa fa-star"/>
+            <page page-id="members" label="Members" icon="fa fa-users"/>
+            <page page-id="awards" label="Awards" icon="fa fa-trophy"/>
+        </sub-menu>
+    </nav>
+
+    <extra-menu>
+        <a label="#{name}" href="#" icon="fa fa-user"/>
+    </extra-menu>
+</header>

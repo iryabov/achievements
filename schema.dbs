@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Achievements" id="Project_1d30" database="PostgreSQL" >
+	<schema name="achievements" >
+		<table name="achievement" prior="tbl" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="name" type="varchar" length="100" jt="12" />
+			<index name="pk_achievement_id_0" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="award" prior="tbl" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="name" type="varchar" length="100" jt="12" mandatory="y" />
+			<index name="pk_award_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="member" >
+			<column name="email" prior="username" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="name" type="varchar" length="100" jt="12" />
+			<index name="pk_member_username" unique="PRIMARY_KEY" >
+				<column name="email" />
+			</index>
+		</table>
+		<table name="purchase" prior="згксрфыу" >
+			<column name="id" type="serial" jt="4" mandatory="y" />
+			<column name="award_id" type="integer" jt="4" mandatory="y" />
+			<column name="member_d" type="varchar" jt="12" mandatory="y" />
+			<column name="dt" type="date" jt="91" mandatory="y" />
+			<index name="pk_purchase_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_purchase_award" to_schema="achievements" to_table="award" >
+				<fk_column name="award_id" pk="id" />
+			</fk>
+			<fk name="fk_purchase_member" to_schema="achievements" to_table="member" >
+				<fk_column name="member_d" pk="email" />
+			</fk>
+		</table>
+		<table name="vinner" prior="award" >
+			<column name="id" type="serial" jt="4" mandatory="y" />
+			<column name="member_id" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="year" type="integer" jt="4" mandatory="y" />
+			<column name="month" type="integer" jt="4" mandatory="y" />
+			<column name="achievement_id" type="integer" jt="4" mandatory="y" />
+			<column name="note" type="varchar" length="600" jt="12" />
+			<column name="points" prior="p" type="integer" jt="4" />
+			<index name="pk_achievement_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_vinner_achievement" to_schema="achievements" to_table="achievement" >
+				<fk_column name="achievement_id" pk="id" />
+			</fk>
+			<fk name="fk_vinner_member" to_schema="achievements" to_table="member" >
+				<fk_column name="member_id" pk="email" />
+			</fk>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout_92e" show_relation="columns" >
+		<entity schema="achievements" name="achievement" color="C1D8EE" x="400" y="160" />
+		<entity schema="achievements" name="award" color="C1D8EE" x="400" y="352" />
+		<entity schema="achievements" name="member" color="C1D8EE" x="400" y="256" />
+		<entity schema="achievements" name="purchase" color="C1D8EE" x="144" y="384" />
+		<entity schema="achievements" name="vinner" color="C1D8EE" x="144" y="160" />
+		<callout x="48" y="48" pointer="Round" >
+			<comment><![CDATA[DbSchema is in offline mode.
+New designed tables will be saved to model file and later can be create in any database.
+Right-click the layout to create new tables. Drop this callout from its context menu.]]></comment>
+		</callout>
+	</layout>
+</project>

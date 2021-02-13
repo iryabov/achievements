@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<query xmlns="http://n2oapp.net/framework/config/schema/query-4.0"
+       object-id="award">
+    <list>
+        <sql>select :select
+            from achievements.award w
+            where :filters
+        </sql>
+    </list>
+    <fields>
+        <field id="id">
+            <select mapping="['id']">w.id as id</select>
+            <filters>
+                <eq filter-id="id">w.id = :id</eq>
+            </filters>
+        </field>
+        <field id="name">
+            <select mapping="['name']">w.name as name</select>
+        </field>
+        <field id="image">
+            <select mapping="['image']">w.image as image</select>
+        </field>
+        <field id="type.id">
+            <select mapping="['type']">w.type as type</select>
+        </field>
+        <field id="cost">
+            <select mapping="['cost']">w.cost as cost</select>
+        </field>
+    </fields>
+</query>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<query xmlns="http://n2oapp.net/framework/config/schema/query-4.0">
+    <list result-mapping="#this" count-mapping="size()">
+        <java method="getMonths" class="com.github.iryabov.achievements.PeriodUtilsKt"/>
+    </list>
+    <unique filters="id" result-mapping="#this">
+        <java method="getMonth" class="com.github.iryabov.achievements.PeriodUtilsKt">
+            <arguments>
+                <argument name="month" type="primitive"/>
+            </arguments>
+        </java>
+    </unique>
+    <fields>
+        <field id="id">
+            <select mapping="id"/>
+            <filters>
+                <eq filter-id="id" mapping="[0]"/>
+            </filters>
+        </field>
+        <field id="name">
+            <select mapping="name"/>
+        </field>
+    </fields>
+
+</query>

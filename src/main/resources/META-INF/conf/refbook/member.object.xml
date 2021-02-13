@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object xmlns="http://n2oapp.net/framework/config/schema/object-4.0">
+    <operations>
+        <operation id="create">
+            <invocation>
+                <sql>insert into achievements.member (email, name, avatar)
+                    values (:email, :name, :avatar)</sql>
+            </invocation>
+            <in>
+                <field id="email" mapping="['email']"/>
+                <field id="name" mapping="['name']"/>
+                <field id="avatar" mapping="['avatar']"/>
+            </in>
+            <out>
+                <field id="id" mapping="[0]"/>
+            </out>
+        </operation>
+        <operation id="update">
+            <invocation>
+                <sql>update achievements.member set email = :email, name = :name, avatar = :avatar
+                    where id = :id</sql>
+            </invocation>
+            <in>
+                <field id="id" mapping="['id']"/>
+                <field id="email" mapping="['email']"/>
+                <field id="name" mapping="['name']"/>
+                <field id="avatar" mapping="['avatar']"/>
+            </in>
+        </operation>
+        <operation id="delete">
+            <invocation>
+                <sql>delete from achievements.member where id = :id</sql>
+            </invocation>
+            <in>
+                <field id="id" mapping="['id']"/>
+            </in>
+        </operation>
+    </operations>
+</object>
