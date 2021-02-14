@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<simple-page xmlns="http://n2oapp.net/framework/config/schema/page-3.0">
+<simple-page xmlns="http://n2oapp.net/framework/config/schema/page-3.0" name="Home">
     <form>
         <fields>
-            <text id="text" class="h1">Hello!</text>
+            <hidden id="name" default-value="#{name}"/>
+            <text id="greeting" class="h1">Hello, {name}</text>
+            <text id="stars" class="h4">You have 1 stars</text>
         </fields>
     </form>
 </simple-page>
