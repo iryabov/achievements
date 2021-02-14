@@ -1,10 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<simple-page xmlns="http://n2oapp.net/framework/config/schema/page-3.0" name="Home">
-    <form>
-        <fields>
-            <hidden id="name" default-value="#{name}"/>
-            <text id="greeting" class="h1">Hello, {name}</text>
-            <text id="stars" class="h4">You have 1 stars</text>
-        </fields>
-    </form>
-</simple-page>
+<page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
+      name="Home">
+    <regions>
+        <form>
+            <fields>
+                <hidden id="name" default-value="#{name}"/>
+                <text id="greeting" class="h1">Hello, {name}</text>
+                <text id="stars" class="h4">You won 1 stars</text>
+            </fields>
+        </form>
+        <panel collapsible="false">
+            <list query-id="winners">
+                <pagination hide-single-page="true" show-count="false"/>
+                <content>
+                    <left-top>
+                        <image data="{achievement.image}" width="30" />
+                    </left-top>
+                    <body text-field-id="member.name">
+                        <image data="{member.avatar}" width="30"
+                               title="{member.name}"
+                               description="{achievement.name}"/>
+                    </body>
+                </content>
+            </list>
+        </panel>
+    </regions>
+</page>

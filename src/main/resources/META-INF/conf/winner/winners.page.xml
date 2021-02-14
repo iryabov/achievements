@@ -17,6 +17,19 @@
                 </image>
             </column>
             <column text-field-id="period" label="Period"/>
+            <column id="toolbar" label="" width="100px">
+                <toolbar>
+                    <button id="update" icon="fa fa-pencil">
+                        <show-modal page-id="winner" route="/:id/update"
+                                    page-name="Edit winner" submit-operation-id="update">
+                            <path-param name="id" value="{id}"/>
+                        </show-modal>
+                    </button>
+                    <button id="delete" icon="fa fa-trash" confirm="true">
+                        <invoke operation-id="delete"/>
+                    </button>
+                </toolbar>
+            </column>
         </columns>
     </table>
 </simple-page>
