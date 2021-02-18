@@ -3,7 +3,7 @@
         color="inverse" brand-name="Achievements">
     <nav>
         <a label="Store" href="#" icon="fa fa-shopping-cart"/>
-        <a label="Statistic" href="#" icon="fa fa-pie-chart"/>
+        <page label="Statistic" page-id="statistic" route="/statistic" icon="fa fa-pie-chart"/>
         <sub-menu label="Data" icon="fa fa-database">
             <page page-id="winners" label="Winners" icon="fa fa-trophy"/>
 

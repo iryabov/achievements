@@ -11,7 +11,7 @@
                 </options>
             </select>
             <text-area id="image" label="Image" required="true" help="Need to convert your image to Base64"/>
-            <image id="imagePreview" data="{image}" width="30px"/>
+<!--            <image id="imagePreview" data="{image}" width="30px"/>-->
         </fields>
         <pre-filters>
             <eq field-id="id" param="id"/>

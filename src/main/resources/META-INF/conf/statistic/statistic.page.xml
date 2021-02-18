@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page xmlns="http://n2oapp.net/framework/config/schema/page-3.0">
+    <regions>
+        <panel title="Winners for all time">
+            <chart query-id="statistic" width="730" height="250">
+                <bars x-field-id="name">
+                    <bar field-id="cnt" color="#8884d8"/>
+                </bars>
+            </chart>
+        </panel>
+    </regions>
+</page>

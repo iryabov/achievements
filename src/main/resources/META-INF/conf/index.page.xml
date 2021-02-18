@@ -5,24 +5,39 @@
         <form>
             <fields>
                 <hidden id="name" default-value="#{name}"/>
-                <text id="greeting" class="h1">Hello, {name}</text>
-                <text id="stars" class="h4">You won 1 stars</text>
+                <hidden id="stars" default-value="1"/>
+                <text class="h1">Hello, {name}</text>
+                <text class="h4">You earned {stars} stars</text>
             </fields>
         </form>
         <panel collapsible="false">
-            <list query-id="winners">
-                <pagination hide-single-page="true" show-count="false"/>
+            <cards query-id="winners" height="150px">
+                <pre-filters>
+                    <eq field-id="year.id" value="2021"/>
+                </pre-filters>
                 <content>
-                    <left-top>
-                        <image data="{achievement.image}" width="30" />
-                    </left-top>
-                    <body text-field-id="member.name">
-                        <image data="{member.avatar}" width="30"
-                               title="{member.name}"
-                               description="{achievement.name}"/>
-                    </body>
+
+
+                    <col size="1">
+                        <block>
+                            <image data="{member.avatar}"/>
+                        </block>
+                    </col>
+
+                    <col size="2">
+                        <block text-field-id="member.name">
+                            <text class="h2"/>
+                        </block>
+                        <block style="100%" text-field-id="achievement.name">
+                            <image data="{achievement.image}"
+                                   description="{achievement.name}"
+                                   width="20"/>
+                        </block>
+                    </col>
                 </content>
-            </list>
+                <pagination hide-single-page="true" show-count="false"/>
+
+            </cards>
         </panel>
     </regions>
 </page>

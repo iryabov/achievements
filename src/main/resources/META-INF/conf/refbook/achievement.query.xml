@@ -5,8 +5,15 @@
         <sql>select :select
             from achievements.achievement a
             where :filters
+            offset :offset limit :limit
         </sql>
     </list>
+    <count count-mapping="[0]['cnt']">
+        <sql>select count(*) as cnt
+            from achievements.achievement a
+            where :filters
+        </sql>
+    </count>
     <fields>
         <field id="id">
             <select mapping="['id']">a.id as id</select>

@@ -13,17 +13,20 @@
         <field id="year.id">
             <select mapping="['year']">w.year as year</select>
             <filters>
-                <eq filter-id="year.id">w.year = :year</eq>
+                <eq filter-id="year.id">w.year = :year.id</eq>
             </filters>
         </field>
         <field id="month.id">
             <select mapping="['month']">w.month as month</select>
             <filters>
-                <eq filter-id="month.id">w.month = :month</eq>
+                <eq filter-id="month.id">w.month = :month.id</eq>
             </filters>
         </field>
         <field id="period">
             <select mapping="['year']" normalize="T(com.github.iryabov.achievements.PeriodUtilsKt).getPeriod(#data['year.id'], #data['month.id'])"/>
+        </field>
+        <field id="member.id">
+            <select mapping="['member_id']">m.id as member_id</select>
         </field>
         <field id="member.email">
             <select mapping="['email']">m.email as email</select>
