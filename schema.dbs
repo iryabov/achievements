@@ -4,6 +4,8 @@
 		<table name="achievement" prior="tbl" >
 			<column name="id" type="integer" jt="4" mandatory="y" />
 			<column name="name" type="varchar" length="100" jt="12" />
+			<column name="image" type="text" jt="12" />
+			<column name="type" type="integer" jt="4" />
 			<index name="pk_achievement_id_0" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -11,15 +13,20 @@
 		<table name="award" prior="tbl" >
 			<column name="id" type="integer" jt="4" mandatory="y" />
 			<column name="name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="cost" type="integer" jt="4" />
+			<column name="type" type="integer" jt="4" />
+			<column name="image" type="text" jt="12" />
 			<index name="pk_award_id" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
 		</table>
 		<table name="member" >
+			<column name="id" type="serial" jt="4" mandatory="y" />
 			<column name="email" prior="username" type="varchar" length="100" jt="12" mandatory="y" />
 			<column name="name" type="varchar" length="100" jt="12" />
-			<index name="pk_member_username" unique="PRIMARY_KEY" >
-				<column name="email" />
+			<column name="avatar" type="text" jt="12" />
+			<index name="pk_member_id" unique="PRIMARY_KEY" >
+				<column name="id" />
 			</index>
 		</table>
 		<table name="purchase" prior="згксрфыу" >
@@ -27,6 +34,8 @@
 			<column name="award_id" type="integer" jt="4" mandatory="y" />
 			<column name="member_d" type="varchar" jt="12" mandatory="y" />
 			<column name="dt" type="date" jt="91" mandatory="y" />
+			<column name="cost" type="integer" jt="4" />
+			<column name="note" type="text" jt="12" />
 			<index name="pk_purchase_id" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -37,7 +46,7 @@
 				<fk_column name="member_d" pk="email" />
 			</fk>
 		</table>
-		<table name="vinner" prior="award" >
+		<table name="winner" prior="vinner" >
 			<column name="id" type="serial" jt="4" mandatory="y" />
 			<column name="member_id" type="varchar" length="100" jt="12" mandatory="y" />
 			<column name="year" type="integer" jt="4" mandatory="y" />
@@ -45,6 +54,7 @@
 			<column name="achievement_id" type="integer" jt="4" mandatory="y" />
 			<column name="note" type="varchar" length="600" jt="12" />
 			<column name="points" prior="p" type="integer" jt="4" />
+			<column name="type" type="integer" jt="4" />
 			<index name="pk_achievement_id" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -58,10 +68,10 @@
 	</schema>
 	<layout name="Default Layout" id="Layout_92e" show_relation="columns" >
 		<entity schema="achievements" name="achievement" color="C1D8EE" x="400" y="160" />
-		<entity schema="achievements" name="award" color="C1D8EE" x="400" y="352" />
-		<entity schema="achievements" name="member" color="C1D8EE" x="400" y="256" />
+		<entity schema="achievements" name="award" color="C1D8EE" x="400" y="416" />
+		<entity schema="achievements" name="member" color="C1D8EE" x="400" y="288" />
 		<entity schema="achievements" name="purchase" color="C1D8EE" x="144" y="384" />
-		<entity schema="achievements" name="vinner" color="C1D8EE" x="144" y="160" />
+		<entity schema="achievements" name="winner" color="C1D8EE" x="144" y="160" />
 		<callout x="48" y="48" pointer="Round" >
 			<comment><![CDATA[DbSchema is in offline mode.
 New designed tables will be saved to model file and later can be create in any database.

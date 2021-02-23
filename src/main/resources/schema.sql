@@ -32,6 +32,7 @@ CREATE  TABLE achievements.purchase (
 	member_d             integer  NOT NULL ,
 	dt                   date  NOT NULL ,
 	cost                 integer  NOT NULL ,
+	note                 text   ,
 	CONSTRAINT pk_purchase_id PRIMARY KEY ( id ),
 	CONSTRAINT fk_purchase_award FOREIGN KEY ( award_id ) REFERENCES achievements.award( id )   ,
 	CONSTRAINT fk_purchase_member FOREIGN KEY ( member_d ) REFERENCES achievements.member( id )

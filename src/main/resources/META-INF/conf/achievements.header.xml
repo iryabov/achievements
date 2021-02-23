@@ -6,7 +6,7 @@
         <page label="Statistic" page-id="statistic" route="/statistic" icon="fa fa-pie-chart"/>
         <sub-menu label="Data" icon="fa fa-database">
             <page page-id="winners" label="Winners" icon="fa fa-trophy"/>
-
+            <page page-id="purchases" label="Purchases" icon="fa fa-shopping-cart"/>
         </sub-menu>
         <sub-menu label="Refbooks" icon="fa fa-book">
             <page page-id="achievements" label="Achievements" icon="fa fa-star"/>

@@ -1,0 +1,1 @@
+delete from achievements.purchase where id = :id

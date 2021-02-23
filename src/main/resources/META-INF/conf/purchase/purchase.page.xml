@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<simple-page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
+             name="Purchase">
+    <form query-id="purchases">
+        <fields>
+            <input-select id="member" query-id="member" label="Customer" required="true"
+                          search="false" label-field-id="name" image-field-id="avatar"/>
+            <input-select id="award" query-id="award" label="Award" required="true"
+                          search="false" label-field-id="name" image-field-id="image"/>
+            <date-time id="dt" label="Date" date-format="DD.MM.YYYY" default-value="{today()}"/>
+            <input-text id="cost" label="Cost" domain="integer"/>
+            <text-area id="note" label="Note"/>
+        </fields>
+        <pre-filters>
+            <eq field-id="id" param="id"/>
+        </pre-filters>
+    </form>
+</simple-page>

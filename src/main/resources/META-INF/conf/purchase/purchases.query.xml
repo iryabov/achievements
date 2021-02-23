@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<query xmlns="http://n2oapp.net/framework/config/schema/query-4.0" object-id="purchase">
+    <list>
+        <sql file="classpath:/sql/selectPurchases.sql"/>
+    </list>
+    <fields>
+        <field id="id">
+            <select mapping="['id']">p.id as id</select>
+            <filters>
+                <eq filter-id="id">p.id = :id</eq>
+            </filters>
+        </field>
+        <field id="dt">
+            <select mapping="['dt']">p.dt as dt</select>
+        </field>
+        <field id="member.id">
+            <select mapping="['member_id']">m.id as member_id</select>
+        </field>
+        <field id="member.email">
+            <select mapping="['email']">m.email as email</select>
+        </field>
+        <field id="member.name">
+            <select mapping="['member_name']">m.name as member_name</select>
+        </field>
+        <field id="member.avatar">
+            <select mapping="['avatar']">m.avatar as avatar</select>
+        </field>
+        <field id="award.name">
+            <select mapping="['award_name']">a.name as award_name</select>
+        </field>
+        <field id="award.id">
+            <select mapping="['award_id']">a.id as award_id</select>
+        </field>
+        <field id="award.image">
+            <select mapping="['award_image']">a.image as award_image</select>
+        </field>
+    </fields>
+</query>

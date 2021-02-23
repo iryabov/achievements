@@ -7,14 +7,15 @@
                 <hidden id="name" default-value="#{name}"/>
                 <hidden id="stars" default-value="1"/>
                 <text class="h1">Hello, {name}</text>
-                <text class="h4">You earned {stars} stars</text>
+                <text class="h4">You have earned {stars} stars</text>
             </fields>
         </form>
-        <panel collapsible="false">
+        <panel collapsible="false" title="Winners of last month">
             <cards query-id="winners" height="150px">
                 <pre-filters>
                     <eq field-id="year.id" value="2021"/>
                 </pre-filters>
+
                 <content>
 
 
