@@ -34,5 +34,11 @@
         <field id="award.image">
             <select mapping="['award_image']">a.image as award_image</select>
         </field>
+        <field id="cost">
+            <select mapping="['cost']">p.cost as cost</select>
+        </field>
+        <field id="note">
+            <select mapping="['note']">p.note as note</select>
+        </field>
     </fields>
 </query>

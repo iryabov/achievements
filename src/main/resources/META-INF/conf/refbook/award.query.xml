@@ -5,6 +5,7 @@
         <sql>select :select
             from achievements.award w
             where :filters
+            order by cost asc
         </sql>
     </list>
     <fields>

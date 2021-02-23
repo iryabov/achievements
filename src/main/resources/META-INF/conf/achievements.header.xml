@@ -2,7 +2,7 @@
 <header xmlns="http://n2oapp.net/framework/config/schema/header-2.0"
         color="inverse" brand-name="Achievements">
     <nav>
-        <a label="Store" href="#" icon="fa fa-shopping-cart"/>
+        <page label="Store" page-id="store" icon="fa fa-shopping-cart"/>
         <page label="Statistic" page-id="statistic" route="/statistic" icon="fa fa-pie-chart"/>
         <sub-menu label="Data" icon="fa fa-database">
             <page page-id="winners" label="Winners" icon="fa fa-trophy"/>
