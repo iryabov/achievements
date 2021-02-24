@@ -36,6 +36,7 @@
 			<column name="dt" type="date" jt="91" mandatory="y" />
 			<column name="cost" type="integer" jt="4" />
 			<column name="note" type="text" jt="12" />
+			<column name="status" type="integer" length="1" jt="4" />
 			<index name="pk_purchase_id" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
