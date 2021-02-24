@@ -16,6 +16,8 @@
     </nav>
 
     <extra-menu>
+        <a label="#{stars}" href="#" icon="fa fa-star"/>
+        <a label="#{orders}" href="#" icon="fa fa-shopping-cart"/>
         <a label="#{name}" href="#" icon="fa fa-user"/>
     </extra-menu>
 </header>

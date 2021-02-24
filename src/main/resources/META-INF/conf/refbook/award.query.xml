@@ -21,9 +21,6 @@
         <field id="image">
             <select mapping="['image']">w.image as image</select>
         </field>
-        <field id="type.id">
-            <select mapping="['type']">w.type as type</select>
-        </field>
         <field id="cost">
             <select mapping="['cost']">w.cost as cost</select>
         </field>

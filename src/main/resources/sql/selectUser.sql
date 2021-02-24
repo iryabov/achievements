@@ -5,8 +5,7 @@ select
     m.avatar as avatar,
     (select count(*)
        from achievements.winner w
-      where w.member_id = m.id
-        and w.type = 1) as stars, --month
+      where w.member_id = m.id) as stars,
     (select count(*)
        from achievements.purchase p
       where p.member_id = m.id

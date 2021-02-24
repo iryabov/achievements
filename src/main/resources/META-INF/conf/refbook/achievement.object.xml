@@ -3,14 +3,13 @@
     <operations>
         <operation id="create">
             <invocation>
-                <sql>insert into achievements.achievement (id, name, image, type)
-                    values (:id, :name, :image, :type)</sql>
+                <sql>insert into achievements.achievement (id, name, image)
+                    values (:id, :name, :image)</sql>
             </invocation>
             <in>
                 <field id="id" mapping="['id']"/>
                 <field id="name" mapping="['name']"/>
                 <field id="image" mapping="['image']"/>
-                <field id="type.id" mapping="['type']"/>
             </in>
             <out>
                 <field id="id" mapping="[0]"/>
@@ -18,14 +17,13 @@
         </operation>
         <operation id="update">
             <invocation>
-                <sql>update achievements.achievement set name = :name, image = :image, type = :type
+                <sql>update achievements.achievement set name = :name, image = :image
                     where id = :id</sql>
             </invocation>
             <in>
                 <field id="id" mapping="['id']"/>
                 <field id="name" mapping="['name']"/>
                 <field id="image" mapping="['image']"/>
-                <field id="type.id" mapping="['type']"/>
             </in>
         </operation>
         <operation id="delete">

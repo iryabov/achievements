@@ -2,11 +2,6 @@
 <page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
       name="Store">
     <regions>
-        <form id="user" default-values-query-id="user" upload="defaults">
-            <fields>
-                <text class="h4">You can spend {balance} stars</text>
-            </fields>
-        </form>
         <tiles id="store" query-id="award" cols-lg="4" cols-md="3" cols-sm="1">
             <pagination show-count="false"/>
             <content>

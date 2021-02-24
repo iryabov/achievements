@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<page xmlns="http://n2oapp.net/framework/config/schema/page-3.0">
+<page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
+      name="Statistic">
     <regions>
         <panel title="Winners for all time">
             <chart query-id="statistic" width="730" height="250">

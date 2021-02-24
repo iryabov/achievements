@@ -13,7 +13,7 @@ import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser
 
 @Configuration
-class SecurityConfig(val userService: UserService): WebSecurityConfigurerAdapter() {
+class SecurityConfig(): WebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity?) {
         http!!.authorizeRequests()
@@ -22,24 +22,37 @@ class SecurityConfig(val userService: UserService): WebSecurityConfigurerAdapter
                 .oauth2Login().and().csrf().disable()
     }
 
-    @EventListener(AuthenticationSuccessEvent::class)
-    fun onSuccessLogin(event: AuthenticationSuccessEvent) {
-        val principal = event.authentication.principal
-        val attributes = (principal as DefaultOidcUser).attributes
-        userService.loadUser(attributes["email"] as String, attributes["name"] as String, attributes["picture"] as String)
-    }
-
     @Bean
     fun oauthContextEngine() = OAuthContextEngine()
 
-    class OAuthContextEngine: ContextEngine {
-        override fun get(param: String?, baseParams: MutableMap<String, Any>?): Any = get(param)
+    class OAuthContextEngine: UserContextEngine() {
         override fun get(name: String?): Any {
             val principal = SecurityContextHolder.getContext()?.authentication?.principal
             val attributes = (principal as DefaultOidcUser).attributes
-            return attributes[name] ?: ""
+            return attributes[name] ?: super.get(name)
         }
-        override fun set(dataSet: MutableMap<String, Any>?, baseParams: MutableMap<String, Any>?) {}
-        override fun set(dataSet: MutableMap<String, Any>?) {}
+    }
+
+    open class UserContextEngine: ContextEngine {
+        val data: MutableMap<String, Any> = HashMap()
+
+        override fun get(param: String?, baseParams: MutableMap<String, Any>?): Any {
+            return get(param)
+        }
+
+        override fun get(name: String?): Any {
+            return data[name] ?: ""
+        }
+
+        override fun set(dataSet: MutableMap<String, Any>?, baseParams: MutableMap<String, Any>?) {
+            set(dataSet)
+        }
+
+        override fun set(dataSet: MutableMap<String, Any>?) {
+            if (dataSet != null) {
+                data.putAll(dataSet)
+            }
+        }
+
     }
 }

@@ -13,4 +13,9 @@ class UserService(val jdbc: JdbcTemplate) {
             jdbc.update("insert into achievements.member (email, name, avatar) values (?, ?, ?)", email, name, avatar)
         }
     }
+
+    fun loadUserData(email: String): MutableMap<String, Any> {
+        return jdbc.queryForMap(UserService::class.java.getResource("/sql/selectUser.sql").readText()
+                .replace(":email", "'$email'"))
+    }
 }

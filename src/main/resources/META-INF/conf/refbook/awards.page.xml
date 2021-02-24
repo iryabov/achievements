@@ -14,7 +14,6 @@
             <column id="image" text-field-id="name" label="Image">
                 <image data="{image}" shape="rounded" width="30"/>
             </column>
-            <column text-field-id="type.id" label="Type"/>
             <column text-field-id="cost" label="Cost"/>
             <column id="toolbar" label="" width="100px">
                 <toolbar>

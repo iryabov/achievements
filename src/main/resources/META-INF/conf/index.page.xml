@@ -5,7 +5,6 @@
         <form default-values-query-id="user" upload="defaults">
             <fields>
                 <text class="h1">Hello, {name}</text>
-                <text class="h4">You earned {stars} stars</text>
             </fields>
         </form>
         <panel collapsible="false" title="Winners of last month">

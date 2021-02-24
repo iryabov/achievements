@@ -27,8 +27,5 @@
         <field id="image">
             <select mapping="['image']">a.image as image</select>
         </field>
-        <field id="type.id">
-            <select mapping="['type']">a.type as type</select>
-        </field>
     </fields>
 </query>

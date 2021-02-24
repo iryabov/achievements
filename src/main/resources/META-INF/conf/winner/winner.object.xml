@@ -10,7 +10,6 @@
                 <field id="achievement.id" mapping="['achievement_id']"/>
                 <field id="year.id" mapping="['year']"/>
                 <field id="month.id" mapping="['month']"/>
-                <field id="type.id" mapping="['type']"/>
                 <field id="points" mapping="['points']"/>
                 <field id="note" mapping="['note']"/>
             </in>
@@ -28,7 +27,6 @@
                 <field id="achievement.id" mapping="['achievement_id']"/>
                 <field id="year.id" mapping="['year']"/>
                 <field id="month.id" mapping="['month']"/>
-                <field id="type.id" mapping="['type']"/>
                 <field id="points" mapping="['points']"/>
                 <field id="note" mapping="['note']"/>
             </in>

@@ -4,12 +4,6 @@
         <fields>
             <input-text id="id" label="Code" domain="integer" required="true"/>
             <input-text id="name" label="Name" required="true"/>
-            <select id="type" label="Type" required="true">
-                <options>
-                    <option id="MONTH" name="Ежемесячные"/>
-                    <option id="ANNUAL" name="Годовые"/>
-                </options>
-            </select>
             <text-area id="image" label="Image" required="true" help="Need to convert your image to Base64"/>
 <!--            <image id="imagePreview" data="{image}" width="30px"/>-->
         </fields>
