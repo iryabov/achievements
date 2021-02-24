@@ -3,10 +3,11 @@
     <regions>
         <form id="order" object-id="store" default-values-query-id="award">
             <fields>
-                <image id="image" label="Image" data="{image}" width="200px"/>
+                <image id="imageField" label="Image" data="{image}" width="200px"/>
                 <output-text id="name" label="Goods" no-label-block="true" no-label="true"/>
                 <output-text id="cost" label="Price" icon="fa fa-star" position="right"/>
                 <text-area id="note" label="Note" description="Your wishes for the order"/>
+                <hidden id="stars" default-value="#{stars}"/>
             </fields>
             <toolbar place="bottomLeft">
                 <button label="Confirm" color="primary">

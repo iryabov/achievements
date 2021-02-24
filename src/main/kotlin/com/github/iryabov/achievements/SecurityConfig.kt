@@ -1,6 +1,7 @@
 package com.github.iryabov.achievements
 
 import net.n2oapp.framework.api.context.ContextEngine
+import net.n2oapp.framework.ui.context.SessionContextEngine
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -25,7 +26,7 @@ class SecurityConfig(): WebSecurityConfigurerAdapter() {
     @Bean
     fun oauthContextEngine() = OAuthContextEngine()
 
-    class OAuthContextEngine: UserContextEngine() {
+    class OAuthContextEngine: SessionContextEngine() {
         override fun get(name: String?): Any {
             val principal = SecurityContextHolder.getContext()?.authentication?.principal
             val attributes = (principal as DefaultOidcUser).attributes
@@ -33,26 +34,4 @@ class SecurityConfig(): WebSecurityConfigurerAdapter() {
         }
     }
 
-    open class UserContextEngine: ContextEngine {
-        val data: MutableMap<String, Any> = HashMap()
-
-        override fun get(param: String?, baseParams: MutableMap<String, Any>?): Any {
-            return get(param)
-        }
-
-        override fun get(name: String?): Any {
-            return data[name] ?: ""
-        }
-
-        override fun set(dataSet: MutableMap<String, Any>?, baseParams: MutableMap<String, Any>?) {
-            set(dataSet)
-        }
-
-        override fun set(dataSet: MutableMap<String, Any>?) {
-            if (dataSet != null) {
-                data.putAll(dataSet)
-            }
-        }
-
-    }
 }

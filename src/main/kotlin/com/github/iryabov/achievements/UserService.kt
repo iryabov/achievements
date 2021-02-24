@@ -15,7 +15,6 @@ class UserService(val jdbc: JdbcTemplate) {
     }
 
     fun loadUserData(email: String): MutableMap<String, Any> {
-        return jdbc.queryForMap(UserService::class.java.getResource("/sql/selectUser.sql").readText()
-                .replace(":email", "'$email'"))
+        return jdbc.queryForMap(UserService::class.java.getResource("/sql/selectUser.sql").readText(), email)
     }
 }
