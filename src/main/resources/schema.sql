@@ -27,14 +27,14 @@ CREATE  TABLE achievements.member (
 CREATE  TABLE achievements.purchase (
 	id                   serial  NOT NULL ,
 	award_id             integer  NOT NULL ,
-	member_d             integer  NOT NULL ,
+	member_id             integer  NOT NULL ,
 	dt                   date  NOT NULL ,
 	cost                 integer  NOT NULL ,
 	note                 text ,
 	status               integer,
 	CONSTRAINT pk_purchase_id PRIMARY KEY ( id ),
 	CONSTRAINT fk_purchase_award FOREIGN KEY ( award_id ) REFERENCES achievements.award( id )   ,
-	CONSTRAINT fk_purchase_member FOREIGN KEY ( member_d ) REFERENCES achievements.member( id )
+	CONSTRAINT fk_purchase_member FOREIGN KEY ( member_id ) REFERENCES achievements.member( id )
  );
 
 CREATE  TABLE achievements.winner (

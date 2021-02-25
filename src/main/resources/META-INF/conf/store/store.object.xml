@@ -16,7 +16,7 @@
             <validations>
                 <condition id="notEnoughStars"
                            severity="danger"
-                           message="Not enough stars"><![CDATA[cost > stars]]></condition>
+                           message="Not enough stars"><![CDATA[cost <= stars]]></condition>
             </validations>
         </operation>
     </operations>

@@ -24,7 +24,7 @@ fun getYears(): List<Refbook> {
     for (i in start..current) {
         result.add(Refbook(i, i.toString()))
     }
-    return result
+    return result.sortedByDescending { it.id }
 }
 
 fun getMonthName(month: Int) = Month.of(month).getDisplayName(TextStyle.FULL_STANDALONE, LocaleContextHolder.getLocale()).capitalize()
