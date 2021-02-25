@@ -11,6 +11,7 @@
                 <field id="dt" mapping="['dt']" domain="localdate"/>
                 <field id="cost" mapping="['cost']"/>
                 <field id="note" mapping="['note']"/>
+                <field id="status.id" mapping="['status']"/>
             </in>
             <out>
                 <field id="id" mapping="[0]"/>
@@ -27,6 +28,7 @@
                 <field id="dt" mapping="['dt']" domain="localdate"/>
                 <field id="cost" mapping="['cost']"/>
                 <field id="note" mapping="['note']"/>
+                <field id="status.id" mapping="['status']"/>
             </in>
         </operation>
         <operation id="delete">

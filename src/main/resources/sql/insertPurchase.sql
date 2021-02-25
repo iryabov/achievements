@@ -1,2 +1,2 @@
-insert into achievements.purchase (member_id, award_id, dt, cost, note)
-values (:member_id, :award_id, :dt, :cost, :note)
+insert into achievements.purchase (member_id, award_id, dt, cost, note, status)
+values (:member_id, :award_id, :dt, :cost, :note, :status)

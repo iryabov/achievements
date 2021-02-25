@@ -4,7 +4,7 @@
     <regions>
         <panel title="Winners for all time">
             <chart query-id="statistic" width="730" height="250">
-                <bars x-field-id="name">
+                <bars x-field-id="name" y-min="0">
                     <bar field-id="cnt" color="#8884d8"/>
                 </bars>
             </chart>

@@ -19,6 +19,15 @@
             <column text-field-id="dt" label="Date">
                 <text format="date DD.MM.YYYY"/>
             </column>
+            <column text-field-id="status.name" label="Status">
+                <badge>
+                    <switch value-field-id="status.id">
+                        <case value="1">warning</case>
+                        <case value="2">success</case>
+                        <default>danger</default>
+                    </switch>
+                </badge>
+            </column>
             <column id="toolbar" label="" width="100px">
                 <toolbar>
                     <button id="update" icon="fa fa-pencil">

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
+      name="My orders">
+    <regions>
+        <cards id="orders" query-id="purchases" height="150px">
+            <pre-filters>
+                <eq field-id="member.email" value="#{email}" required="true" ref-widget-id="orders"/>
+            </pre-filters>
+            <content>
+                <col size="1">
+                    <block>
+                        <image data="{award.image}"/>
+                    </block>
+                    <block text-field-id="dt">
+                        <text format="date DD.MM.YYYY" class="text-muted"/>
+                    </block>
+                </col>
+
+                <col size="2">
+                    <block text-field-id="award.name">
+                        <text subtext-field-id="note"/>
+                    </block>
+                </col>
+                <col>
+                    <block text-field-id="status.name">
+                        <badge>
+                            <switch value-field-id="status.id">
+                                <case value="1">warning</case>
+                                <case value="2">success</case>
+                                <default>danger</default>
+                            </switch>
+                        </badge>
+                    </block>
+                </col>
+            </content>
+            <pagination hide-single-page="true" show-count="false"/>
+        </cards>
+    </regions>
+</page>

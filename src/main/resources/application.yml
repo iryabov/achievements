@@ -9,8 +9,8 @@ server:
 spring:
   security.oauth2.client.registration:
     google:
-      client-id: 683041909788-msu8mt9bt6p3otjslfium3oioio5o5n2.apps.googleusercontent.com
-      client-secret: sx_s7bp97SDmODrw6UJSxmL4
+      client-id:
+      client-secret:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/achievements
@@ -25,7 +25,7 @@ n2o:
     button:
       disable_on_empty_model: false
   i18n:
-    default-locale: ru
+    default-locale: en
   header.id: achievements
   config:
     monitoring:

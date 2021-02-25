@@ -10,6 +10,15 @@
             <date-time id="dt" label="Date" date-format="DD.MM.YYYY" default-value="{today()}"/>
             <input-text id="cost" label="Cost" domain="integer"/>
             <text-area id="note" label="Note"/>
+            <radio-group id="status" label="Status" required="true">
+                <default-value id="2" name="Done"/>
+                <options>
+                    <option id="1" name="Processing"/>
+                    <option id="2" name="Completed"/>
+                    <option id="3" name="Rejected"/>
+                    <option id="4" name="Canceled"/>
+                </options>
+            </radio-group>
         </fields>
         <pre-filters>
             <eq field-id="id" param="id"/>

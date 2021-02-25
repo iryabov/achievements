@@ -19,7 +19,8 @@
                     <toolbar>
                         <button label="Order" color="success">
                             <show-modal page-id="order" route="/:award_id/order"
-                                       upload="defaults" page-name="Order" modal-size="sm">
+                                        upload="defaults" page-name="Order"
+                                        modal-size="sm" backdrop="true">
                                 <path-param name="award_id" value="{id}"/>
                             </show-modal>
                         </button>

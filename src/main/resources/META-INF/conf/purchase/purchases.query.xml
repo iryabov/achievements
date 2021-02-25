@@ -10,6 +10,15 @@
                 <eq filter-id="id">p.id = :id</eq>
             </filters>
         </field>
+        <field id="status.id">
+            <select mapping="['status']">p.status as status</select>
+            <filters>
+                <eq filter-id="status.id" mapping="['status']">p.status = :status</eq>
+            </filters>
+        </field>
+        <field id="status.name">
+            <select mapping="['status']" normalize="#this==1?'Processing':#this==2?'Completed':#this==3?'Rejected':'Canceled'"/>
+        </field>
         <field id="dt">
             <select mapping="['dt']">p.dt as dt</select>
         </field>
@@ -18,6 +27,9 @@
         </field>
         <field id="member.email">
             <select mapping="['email']">m.email as email</select>
+            <filters>
+                <eq filter-id="member.email" mapping="['email']">m.email = :email</eq>
+            </filters>
         </field>
         <field id="member.name">
             <select mapping="['member_name']">m.name as member_name</select>
