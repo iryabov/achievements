@@ -17,11 +17,11 @@
                 </block>
                 <block>
                     <toolbar>
-                        <button label="Buy" color="success">
-                            <open-page page-id="order" route="/:award_id/order"
-                                       upload="defaults" page-name="Order">
+                        <button label="Order" color="success">
+                            <show-modal page-id="order" route="/:award_id/order"
+                                       upload="defaults" page-name="Order" modal-size="sm">
                                 <path-param name="award_id" value="{id}"/>
-                            </open-page>
+                            </show-modal>
                         </button>
                     </toolbar>
                 </block>

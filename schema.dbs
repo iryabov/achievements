@@ -30,7 +30,7 @@
 		<table name="purchase" prior="згксрфыу" >
 			<column name="id" type="serial" jt="4" mandatory="y" />
 			<column name="award_id" type="integer" jt="4" mandatory="y" />
-			<column name="member_d" type="varchar" jt="12" mandatory="y" />
+			<column name="member_id" prior="member_d" type="varchar" jt="12" mandatory="y" />
 			<column name="dt" type="date" jt="91" mandatory="y" />
 			<column name="cost" type="integer" jt="4" />
 			<column name="note" type="text" jt="12" />
@@ -42,7 +42,7 @@
 				<fk_column name="award_id" pk="id" />
 			</fk>
 			<fk name="fk_purchase_member" to_schema="achievements" to_table="member" >
-				<fk_column name="member_d" pk="email" />
+				<fk_column name="member_id" pk="email" />
 			</fk>
 		</table>
 		<table name="winner" prior="vinner" >
