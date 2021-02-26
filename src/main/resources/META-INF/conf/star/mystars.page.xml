@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
+      name="My stars">
+    <regions>
+        <cards id="stars" query-id="winners" height="150px">
+            <pre-filters>
+                <eq field-id="member.email" value="#{email}" required="true" ref-widget-id="stars"/>
+            </pre-filters>
+            <content>
+                <col size="2">
+                    <block>
+                        <image data="{achievement.image}"/>
+                    </block>
+                    <block text-field-id="period">
+                        <text class="text-muted"/>
+                    </block>
+                </col>
+
+                <col>
+                    <block text-field-id="achievement.name">
+                        <text subtext-field-id="note"/>
+                    </block>
+                </col>
+            </content>
+            <pagination hide-single-page="true" show-count="false"/>
+        </cards>
+    </regions>
+</page>

@@ -7,7 +7,7 @@
                 <eq field-id="member.email" value="#{email}" required="true" ref-widget-id="orders"/>
             </pre-filters>
             <content>
-                <col size="1">
+                <col size="2">
                     <block>
                         <image data="{award.image}"/>
                     </block>
@@ -16,12 +16,12 @@
                     </block>
                 </col>
 
-                <col size="2">
+                <col>
                     <block text-field-id="award.name">
                         <text subtext-field-id="note"/>
                     </block>
                 </col>
-                <col>
+                <col size="2">
                     <block text-field-id="status.name">
                         <badge>
                             <switch value-field-id="status.id">

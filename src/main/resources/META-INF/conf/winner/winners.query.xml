@@ -30,6 +30,9 @@
         </field>
         <field id="member.email">
             <select mapping="['email']">m.email as email</select>
+            <filters>
+                <eq filter-id="member.email" mapping="['email']">m.email = :email</eq>
+            </filters>
         </field>
         <field id="member.name">
             <select mapping="['member_name']">m.name as member_name</select>
@@ -45,6 +48,12 @@
         </field>
         <field id="achievement.image">
             <select mapping="['achievement_image']">a.image as achievement_image</select>
+        </field>
+        <field id="points">
+            <select mapping="['points']">w.points as points</select>
+        </field>
+        <field id="note">
+            <select mapping="['note']">w.note as note</select>
         </field>
     </fields>
 </query>

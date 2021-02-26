@@ -17,8 +17,8 @@
     </nav>
 
     <extra-menu>
-        <a label="#{stars}" href="/#/store" icon="fa fa-star"/>
-        <page label="#{orders}" page-id="orders" icon="fa fa-shopping-cart"/>
+        <page label="#{stars}" page-id="mystars" icon="fa fa-star"/>
+        <page label="#{orders}" page-id="myorders" icon="fa fa-shopping-cart"/>
         <a label="#{name}" href="#" icon="fa fa-user"/>
     </extra-menu>
 </header>

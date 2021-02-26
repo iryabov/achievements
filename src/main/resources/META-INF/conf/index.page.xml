@@ -17,13 +17,13 @@
                 <content>
 
 
-                    <col size="1">
+                    <col size="2">
                         <block>
                             <image data="{member.avatar}"/>
                         </block>
                     </col>
 
-                    <col size="2">
+                    <col>
                         <block text-field-id="member.name">
                             <text class="h2"/>
                         </block>
