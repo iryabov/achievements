@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <simple-page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
              name="Awards">
-    <table query-id="award" selection="none">
+    <table object-id="award" query-id="award" selection="none">
         <toolbar place="topLeft">
             <button label="Add" color="primary">
                 <show-modal page-id="award" route="/create" upload="defaults"

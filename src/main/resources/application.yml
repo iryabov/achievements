@@ -30,5 +30,7 @@ n2o:
   config:
     monitoring:
       enabled: true
+  access:
+    schema.id: achievements
 
 

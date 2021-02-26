@@ -3,16 +3,16 @@
         logo-src="star.png"
         color="inverse" brand-name="Achievements">
     <nav>
-        <page label="Store" page-id="store" icon="fa fa-shopping-cart"/>
+        <page label="Store" page-id="store" route="/store" icon="fa fa-shopping-cart"/>
         <page label="Statistic" page-id="statistic" route="/statistic" icon="fa fa-pie-chart"/>
         <sub-menu label="Data" icon="fa fa-database">
-            <page page-id="winners" label="Winners" icon="fa fa-trophy"/>
-            <page page-id="purchases" label="Purchases" icon="fa fa-shopping-cart"/>
+            <page page-id="winners" label="Winners" route="/winners" icon="fa fa-trophy"/>
+            <page page-id="purchases" label="Purchases" route="/purchases" icon="fa fa-shopping-cart"/>
         </sub-menu>
         <sub-menu label="Refbooks" icon="fa fa-book">
-            <page page-id="achievements" label="Achievements" icon="fa fa-star"/>
-            <page page-id="members" label="Members" icon="fa fa-users"/>
-            <page page-id="awards" label="Awards" icon="fa fa-trophy"/>
+            <page page-id="achievements" label="Achievements" route="/achievements" icon="fa fa-star"/>
+            <page page-id="members" label="Members" route="/members" icon="fa fa-users"/>
+            <page page-id="awards" label="Awards" route="/awards" icon="fa fa-trophy"/>
         </sub-menu>
     </nav>
 

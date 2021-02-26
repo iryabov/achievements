@@ -1,0 +1,26 @@
+<access xmlns="http://n2oapp.net/framework/config/schema/access-2.0">
+    <authenticated>
+        <object-access object-id="purchase" operations="order"/>
+        <object-access object-id="winner"/>
+        <object-access object-id="achievement"/>
+        <object-access object-id="award"/>
+        <object-access object-id="member"/>
+        <page-access page-id="index"/>
+        <page-access page-id="store"/>
+        <page-access page-id="statistic"/>
+        <page-access page-id="orders"/>
+    </authenticated>
+
+    <role id="admin">
+        <object-access object-id="purchase" operations="*"/>
+        <object-access object-id="winner" operations="*"/>
+        <object-access object-id="achievement" operations="*"/>
+        <object-access object-id="award" operations="*"/>
+        <object-access object-id="member" operations="*"/>
+        <page-access page-id="purchases"/>
+        <page-access page-id="winners"/>
+        <page-access page-id="achievements"/>
+        <page-access page-id="awards"/>
+        <page-access page-id="members"/>
+    </role>
+</access>

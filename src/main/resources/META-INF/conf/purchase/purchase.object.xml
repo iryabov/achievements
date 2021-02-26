@@ -1,6 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <object xmlns="http://n2oapp.net/framework/config/schema/object-4.0">
     <operations>
+        <operation id="order">
+            <invocation>
+                <sql file="classpath:sql/insertOrder.sql"/>
+            </invocation>
+            <in>
+                <field id="email" mapping="['email']" default-value="#{email}"/>
+                <field id="award.id" mapping="['award_id']" param="award_id"/>
+                <field id="note" mapping="['note']"/>
+            </in>
+            <out>
+                <field id="id" mapping="[0]"/>
+            </out>
+            <validations>
+                <condition id="notEnoughStars"
+                           severity="danger"
+                           message="Not enough stars"><![CDATA[cost <= stars]]></condition>
+            </validations>
+        </operation>
         <operation id="create">
             <invocation>
                 <sql file="classpath:sql/insertPurchase.sql"/>
