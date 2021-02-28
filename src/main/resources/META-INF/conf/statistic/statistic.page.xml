@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
+<top-left-right-page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
       name="Statistic">
-    <regions>
+    <top>
         <panel title="Winners for all time">
             <chart query-id="statistic" width="730" height="250">
                 <bars x-field-id="name" y-min="0">
@@ -19,5 +19,29 @@
                 </pre-filters>
             </chart>
         </panel>
-    </regions>
-</page>
+    </top>
+    <left>
+        <panel title="Winners of 2020">
+            <chart query-id="statistic" width="450" height="250">
+                <bars x-field-id="name" y-min="0">
+                    <bar field-id="cnt" color="#8884d8"/>
+                </bars>
+                <pre-filters>
+                    <eq field-id="year.id" value="2020"/>
+                </pre-filters>
+            </chart>
+        </panel>
+    </left>
+    <right>
+        <panel title="Winners of 2019">
+            <chart query-id="statistic" width="450" height="250">
+                <bars x-field-id="name" y-min="0">
+                    <bar field-id="cnt" color="#8884d8"/>
+                </bars>
+                <pre-filters>
+                    <eq field-id="year.id" value="2019"/>
+                </pre-filters>
+            </chart>
+        </panel>
+    </right>
+</top-left-right-page>
