@@ -5,13 +5,16 @@
         <form>
             <fields>
                 <text class="h1">Hello, {name}</text>
+                <text>You can spend {stars} stars.</text>
                 <hidden id="name" default-value="#{name}"/>
+                <hidden id="stars" default-value="#{stars}"/>
             </fields>
         </form>
         <panel collapsible="false" title="Winners of last month">
             <cards query-id="winners" height="150px">
                 <pre-filters>
                     <eq field-id="year.id" value="2021"/>
+                    <eq field-id="month.id" value="1"/>
                 </pre-filters>
 
                 <content>

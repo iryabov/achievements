@@ -8,7 +8,8 @@
         <page-access page-id="index"/>
         <page-access page-id="store"/>
         <page-access page-id="statistic"/>
-        <page-access page-id="orders"/>
+        <page-access page-id="mystars"/>
+        <page-access page-id="myorders"/>
     </authenticated>
 
     <role id="admin">
