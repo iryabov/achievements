@@ -1,13 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <query xmlns="http://n2oapp.net/framework/config/schema/query-4.0">
     <list>
-        <sql file="classpath:/sql/statistic.sql"/>
+        <sql file="classpath:/sql/history.sql"/>
     </list>
 
     <fields>
-        <field id="id">
-            <select mapping="['name']"/>
-        </field>
         <field id="year.id">
             <select mapping="['year']"/>
             <filters>
@@ -20,8 +17,17 @@
                 <eq filter-id="month.id">w.month = :month.id</eq>
             </filters>
         </field>
-        <field id="cnt">
-            <select mapping="['cnt']"/>
+        <field id="period">
+            <select mapping="['year'] ['month']"/>
+        </field>
+        <field id="member.name">
+            <select mapping="['name']"/>
+            <filters>
+                <eq filter-id="email">m.email = :email</eq>
+            </filters>
+        </field>
+        <field id="stars">
+            <select mapping="['stars']"/>
         </field>
         <field id="name">
             <select mapping="['name']"/>
