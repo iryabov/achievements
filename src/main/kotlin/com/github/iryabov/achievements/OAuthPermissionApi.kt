@@ -10,9 +10,7 @@ class OAuthPermissionApi : PermissionApi {
     override fun hasPermission(user: UserContext, permissionId: String): Boolean = hasRole(user, permissionId)
 
     override fun hasRole(user: UserContext, roleId: String): Boolean =
-        SecurityContextHolder.getContext()?.authentication?.authorities
-            ?.any { it.authority == roleId }
-            ?: false
+       (user.get("roles") as List<*>).contains(roleId)
 
     override fun hasAuthentication(user: UserContext): Boolean =
         SecurityContextHolder.getContext()?.authentication?.isAuthenticated ?: false

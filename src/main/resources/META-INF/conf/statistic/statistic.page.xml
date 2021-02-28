@@ -9,5 +9,15 @@
                 </bars>
             </chart>
         </panel>
+        <panel title="Winners of 2021">
+            <chart query-id="statistic" width="730" height="250">
+                <bars x-field-id="name" y-min="0">
+                    <bar field-id="cnt" color="#8884d8"/>
+                </bars>
+                <pre-filters>
+                    <eq field-id="year.id" value="2021"/>
+                </pre-filters>
+            </chart>
+        </panel>
     </regions>
 </page>
