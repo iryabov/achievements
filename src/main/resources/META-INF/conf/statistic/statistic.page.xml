@@ -20,10 +20,13 @@
             </chart>
         </panel>
         <panel title="Progress">
-            <chart query-id="history" width="730" height="250" >
+            <chart id="history" query-id="history" width="730" height="250" >
                 <lines y-field-id="stars" x-field-id="period">
                     <line field-id="stars" has-label="true"/>
                 </lines>
+                <pre-filters>
+                    <eq field-id="member.name" value="#{email}" ref-widget-id="history"/>
+                </pre-filters>
             </chart>
         </panel>
     </top>

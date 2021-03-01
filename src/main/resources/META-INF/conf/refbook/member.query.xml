@@ -5,8 +5,15 @@
         <sql>select :select
             from achievements.member m
             where :filters
+            limit :limit offset :offset
         </sql>
     </list>
+    <count count-mapping="[0]['cnt']">
+        <sql>select count(*) as cnt
+            from achievements.member m
+            where :filters
+        </sql>
+    </count>
     <fields>
         <field id="id">
             <select mapping="['id']">m.id as id</select>
@@ -17,7 +24,7 @@
         <field id="email">
             <select mapping="['email']">m.email as email</select>
             <filters>
-                <eq filter-id="email">m.email = :email</eq>
+                <like filter-id="email">m.email like '%'||:email||'%'</like>
             </filters>
         </field>
         <field id="name">

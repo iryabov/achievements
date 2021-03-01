@@ -8,6 +8,9 @@
                             page-name="Add new member" submit-operation-id="create"/>
             </button>
         </toolbar>
+        <filters search-on-change="true">
+            <input-text id="email" label="Email"/>
+        </filters>
         <columns>
             <column id="avatar" text-field-id="name" label="Avatar">
                 <image data="{avatar}" shape="rounded" width="30"/>

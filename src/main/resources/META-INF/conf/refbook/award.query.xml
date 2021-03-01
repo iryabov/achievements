@@ -6,8 +6,16 @@
             from achievements.award w
             where :filters
             order by cost asc
+            limit :limit offset :offset
         </sql>
     </list>
+    <count count-mapping="[0]['cnt']">
+        <sql>
+            select count(*) as cnt
+            from achievements.award w
+            where :filters
+        </sql>
+    </count>
     <fields>
         <field id="id">
             <select mapping="['id']">w.id as id</select>

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <query xmlns="http://n2oapp.net/framework/config/schema/query-4.0">
-    <list>
+    <list count-mapping="size()">
         <sql file="classpath:/sql/history.sql"/>
     </list>
 
@@ -18,7 +18,8 @@
             </filters>
         </field>
         <field id="period">
-            <select mapping="['year'] ['month']"/>
+            <select mapping="['year']"
+                    normalize="T(com.github.iryabov.achievements.PeriodUtilsKt).getPeriod(#data['year.id'], #data['month.id'])"/>
         </field>
         <field id="member.name">
             <select mapping="['name']"/>
