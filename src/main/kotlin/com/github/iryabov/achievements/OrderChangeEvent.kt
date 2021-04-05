@@ -7,13 +7,17 @@ import net.n2oapp.framework.api.ui.ActionResponseInfo
 import org.springframework.stereotype.Component
 
 @Component
-class OrderChangeEvent(val userService: UserService): N2oModule() {
+class OrderChangeEvent(val userService: UserService,
+                       val notificationService: NotificationService) : N2oModule() {
 
     override fun processActionResult(requestInfo: ActionRequestInfo<DataSet>?,
                                      responseInfo: ActionResponseInfo?,
                                      dataSet: DataSet?) {
         if (requestInfo?.operation?.id == "order") {
-            requestInfo.user.set(userService.loadUserData(dataSet!!["email"] as String))
+            val email = dataSet!!["email"] as String
+            requestInfo.user.set(userService.loadUserData(email))
+            val order = dataSet["award.name"] as String
+            notificationService.notifyAboutOrder(email, order)
         }
     }
 }
