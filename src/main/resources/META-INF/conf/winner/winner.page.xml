@@ -13,7 +13,7 @@
                 <input-select id="achievement" query-id="achievement" label="Achievement" required="true"
                               search="false" label-field-id="name" image-field-id="image"/>
                 <input-select id="member" query-id="member" label="Winner" required="true"
-                              search="false" label-field-id="name" image-field-id="avatar"/>
+                              search-filter-id="name" label-field-id="name" image-field-id="avatar"/>
             </row>
             <input-text id="points" label="Points" domain="integer"/>
             <text-area id="note" label="Note"/>

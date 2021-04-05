@@ -3,6 +3,9 @@
     <list count-mapping="size()">
         <sql file="classpath:/sql/selectPurchases.sql"/>
     </list>
+    <count count-mapping="[0]['cnt']">
+        <sql file="classpath:/sql/countPurchases.sql"/>
+    </count>
     <fields>
         <field id="id">
             <select mapping="['id']">p.id as id</select>

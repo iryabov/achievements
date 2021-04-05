@@ -10,11 +10,22 @@
                 <hidden id="stars" default-value="#{stars}"/>
             </fields>
         </form>
-        <panel collapsible="false" title="Winners of last month">
-            <cards query-id="winners" height="150px">
+        <panel collapsible="false" header="false">
+            <form id="filters">
+                <fields>
+                    <set field-label-location="left" field-label-width="90px">
+                        <col size="3">
+                            <select id="period" label="Winners of " query-id="periods" param="period">
+                                <default-value id="`moment().subtract(1,'months').format('YYYYMM')`" name="`moment().subtract(1,'months').format('MMMM YYYY')`"/>
+                            </select>
+                        </col>
+                    </set>
+                </fields>
+            </form>
+            <cards query-id="winners" height="150px" depends-on="filters" route="/winners">
                 <pre-filters>
-                    <eq field-id="year.id" value="2021"/>
-                    <eq field-id="month.id" value="1"/>
+                    <eq field-id="year.id" value="{parseInt(period.id / 100)}" ref-widget-id="filters" ref-model="resolve"/>
+                    <eq field-id="month.id" value="{period.id % 100}" ref-widget-id="filters" ref-model="resolve"/>
                 </pre-filters>
 
                 <content>

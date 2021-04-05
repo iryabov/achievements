@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <header xmlns="http://n2oapp.net/framework/config/schema/header-2.0"
         logo-src="star.png"
-        color="inverse" brand-name="Achievements">
+        color="inverse" brand-name="Achievements" home-page-url="/#/">
     <nav>
         <page label="Store" page-id="store" route="/store" icon="fa fa-shopping-cart"/>
         <page label="Statistic" page-id="statistic" route="/statistic" icon="fa fa-pie-chart"/>

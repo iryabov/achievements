@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <simple-page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
              name="Purchases">
-    <table object-id="winner" query-id="purchases" selection="none">
+    <table object-id="purchase" query-id="purchases" selection="none">
         <toolbar place="topLeft">
             <button label="Add" color="primary">
                 <open-page page-id="purchase" route="/create" upload="defaults"

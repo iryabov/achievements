@@ -5,38 +5,27 @@
     </list>
 
     <fields>
-        <field id="year.id">
+        <field id="year.id" domain="localdate">
             <select mapping="['year']"/>
             <filters>
-                <eq filter-id="year.id">w.year = :year.id</eq>
+                <more filter-id="from" mapping="['from']" default-value="2018-05-01"/>
             </filters>
         </field>
         <field id="month.id">
             <select mapping="['month']"/>
-            <filters>
-                <eq filter-id="month.id">w.month = :month.id</eq>
-            </filters>
         </field>
         <field id="period">
             <select mapping="['year']"
-                    normalize="T(com.github.iryabov.achievements.PeriodUtilsKt).getPeriod(#data['year.id'], #data['month.id'])"/>
+                    normalize="T(com.github.iryabov.achievements.PeriodUtilsKt).getPeriodName(#data['year.id'], #data['month.id'])"/>
         </field>
         <field id="member.name">
             <select mapping="['name']"/>
             <filters>
-                <eq filter-id="email">m.email = :email</eq>
+                <eq filter-id="email" mapping="['email']"/>
             </filters>
         </field>
         <field id="stars">
             <select mapping="['stars']"/>
-        </field>
-        <field id="name">
-            <select mapping="['name']"/>
-        </field>
-        <field id="achievement.id">
-            <filters>
-                <eq filter-id="achievement.id" mapping="['achievement_id']">a.id = :achievement_id</eq>
-            </filters>
         </field>
     </fields>
 </query>

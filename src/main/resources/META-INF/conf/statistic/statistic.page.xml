@@ -2,27 +2,31 @@
 <top-left-right-page xmlns="http://n2oapp.net/framework/config/schema/page-3.0"
       name="Statistic">
     <top>
-        <panel title="Winners for all time">
-            <chart query-id="statistic" width="730" height="250">
-                <bars x-field-id="name" y-min="0">
-                    <bar field-id="cnt" color="#8884d8"/>
-                </bars>
+        <panel title="Top 10 for all time">
+            <chart query-id="statistic" width="1200" height="250" size="20">
+<!--                <bars x-field-id="name" y-min="0">-->
+<!--                    <bar field-id="cnt" color="#8884d8"/>-->
+<!--                </bars>-->
+                <pie value-field-id="cnt" name-field-id="name">
+                </pie>
             </chart>
         </panel>
         <panel title="Winners of 2021">
-            <chart query-id="statistic" width="730" height="250">
-                <bars x-field-id="name" y-min="0">
-                    <bar field-id="cnt" color="#8884d8"/>
-                </bars>
+            <chart query-id="statistic" width="1200" height="250" size="20">
+                    <bars x-field-id="name" y-min="0">
+                        <bar field-id="cnt" color="#8884d8"/>
+                    </bars>
+<!--                <pie value-field-id="cnt" name-field-id="name">-->
+<!--                </pie>-->
                 <pre-filters>
                     <eq field-id="year.id" value="2021"/>
                 </pre-filters>
             </chart>
         </panel>
-        <panel title="Progress">
-            <chart id="history" query-id="history" width="730" height="250" >
-                <lines y-field-id="stars" x-field-id="period">
-                    <line field-id="stars" has-label="true"/>
+        <panel title="Your progress">
+            <chart id="history" query-id="history" width="730" height="250">
+                <lines y-min="0" y-field-id="stars" x-field-id="period">
+                    <line field-id="stars" has-label="false" type="basis"/>
                 </lines>
                 <pre-filters>
                     <eq field-id="member.name" value="#{email}" ref-widget-id="history"/>

@@ -3,11 +3,19 @@
              name="Winners">
     <table object-id="winner" query-id="winners" selection="none">
         <toolbar place="topLeft">
-            <button label="Add" color="primary">
+            <button label="Add" color="primary" >
                 <open-page page-id="winner" route="/create" upload="defaults"
                             page-name="Add a new winner" submit-operation-id="create"/>
             </button>
         </toolbar>
+        <filters search-on-change="true">
+            <row>
+                <input-select id="achievement" query-id="achievement" label="Achievement"
+                              search="false" label-field-id="name" image-field-id="image"/>
+                <input-select id="member" query-id="member" label="Winner"
+                              search-filter-id="name" label-field-id="name" image-field-id="avatar"/>
+            </row>
+        </filters>
         <columns>
             <column text-field-id="achievement.name" label="Achievement">
                 <image shape="rounded" data="{achievement.image}" width="30" title="{achievement.name}"/>
